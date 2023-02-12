@@ -1,11 +1,21 @@
 import cv2
 
-cap = cv2.VideoCapture(0)
+face_cascades = cv2.CascadeClassifier(cv2.data.haarcascades + "haarecascade_frontalface_default.xml")
 
-while True:
+img = cv2.imread('face.jpg')
 
-    success, frame = cap.read()
-    cv2.imshow('camera', frame)
+img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-    if cv2.waitKey(1) & 0xff == ord('q'):
-        break
+cv2.imshow('Result', img)
+
+cv2.waitKey(0)
+
+#cap = cv2.VideoCapture(0)
+
+#while True:
+
+#    success, frame = cap.read()
+ #   cv2.imshow('camera', frame)
+
+  #  if cv2.waitKey(1) & 0xff == ord('q'):
+   #     break
